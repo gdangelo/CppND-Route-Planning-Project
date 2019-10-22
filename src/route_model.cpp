@@ -75,8 +75,3 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y) {
 
     return SNodes()[closest_idx];
 }
-
-// Overload the "less than" comparison operator for RouteModel::Node objects
-bool RouteModel::Node::operator<(RouteModel::Node const& other) const {
-  return h_value + g_value > other.h_value + other.g_value;
-}
