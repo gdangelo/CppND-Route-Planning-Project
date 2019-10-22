@@ -34,10 +34,10 @@ void ReadValueFromUserInput(float &var, const std::string var_name) {
   std::cout << "Please enter value for <" + var_name + ">: ";
   std::cin >> value;
   
-  while (std::cin.fail()) {
+  while (std::cin.fail() || value < 0 || value > 100) {
     std::cin.clear();
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::cout << "Wrong input value. Please try again: ";
+	std::cout << "Wrong input value (0 <= val <= 100). Please try again: ";
 	std::cin >> value;
   }
   
