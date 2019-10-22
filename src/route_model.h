@@ -30,6 +30,7 @@ class RouteModel : public Model {
         int index;
         Node * FindNeighbor(std::vector<int> node_indices);
         RouteModel * parent_model = nullptr;
+      	bool operator<(RouteModel::Node const& other) const;
     };
 
     RouteModel(const std::vector<std::byte> &xml);
